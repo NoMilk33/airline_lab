@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class CommandLine {
-
+    
     private ArrayList<Flight> flightList;
 
     private ArrayList<Passenger> passengerList;
