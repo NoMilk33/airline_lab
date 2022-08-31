@@ -38,7 +38,6 @@ public class CommandLine {
         Scanner numberScanner = new Scanner(System.in);
         String contactNumber = numberScanner.nextLine();
         Passenger newPassenger = new Passenger(name,contactNumber);
-        passengerList.add();
         addPassengerToList(newPassenger);
         System.out.println("Success! Confirmed list of passengers at current: " + passengerList);
     }
