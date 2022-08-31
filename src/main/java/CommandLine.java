@@ -21,9 +21,14 @@ public class CommandLine {
         System.out.println("Contact number:");
         Scanner numberScanner = new Scanner(System.in);
         String contactNumber = numberScanner.nextLine();
-        Passenger passenger = new Passenger(name,contactNumber);
-        System.out.println(passengerList);
+        Passenger newPassenger = new Passenger(name,contactNumber);
+        addPassengerToList(newPassenger);
+        System.out.println(passengerList); // maybe add overwrite toString method for passenger object?
 
+    }
+
+    public void addPassengerToList(Passenger passenger){
+        passengerList.add(passenger);
     }
 
     public String showFlights(){
