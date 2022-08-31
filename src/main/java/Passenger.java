@@ -1,7 +1,18 @@
+import java.util.Random;
+
 public class Passenger {
 
     String name;
-    int contactNumber;
+    String contactNumber;
     int passengerID;
+
+    public Passenger(String name, String contactNumber){
+
+        this.name = name;
+        this.contactNumber = contactNumber;
+
+        Random rand = new Random();
+        this.passengerID = rand.nextInt(10000);
+    }
 
 }

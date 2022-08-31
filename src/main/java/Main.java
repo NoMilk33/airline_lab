@@ -6,5 +6,13 @@ public class Main {
         System.out.println();
     }
 
+    public static void main(String[] args) {
+        CommandLine commandLine = new CommandLine();
+        commandLine.addPassenger();
+
+    }
+
+
+
 
 }
