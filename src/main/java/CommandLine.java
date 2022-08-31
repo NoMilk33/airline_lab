@@ -53,25 +53,27 @@ public class CommandLine {
         int passengerId = nameScanner.nextInt();
 
 
-        Passenger bookedPassenger = null;
+
         for (Passenger passenger: passengerList){
             if (passenger.getPassengerID() == passengerId){
-               bookedPassenger = passenger;
+
+                for (Flight flight: flightList){
+                    if (flight.getFlightId()== bookedId){
+                        if (flight.getPassengersOnFlight().contains(passenger)){
+                            System.out.println("passenger already booked");
+                            break;
+                        } else flight.addPassengerToFlight(passenger);
+                        System.out.println("Passenger booking success!");
+                        System.out.println("Passengers on flight to " + flight.getDestination() + " : " + flight.getPassengersOnFlight());
+                        System.out.println("number of passengers: " + flight.getPassengersOnFlight().size());
+
+
+                    }
+                }
             }
         }
 
-        for (Flight flight: flightList){ //Developments would include removing the option to add same person more than once
-            if (flight.getFlightId()== bookedId){
-                if (flight.getPassengersOnFlight().contains(bookedPassenger)){
-                    System.out.println("passenger already booked");
-                } else flight.addPassengerToFlight(bookedPassenger);
-                System.out.println("Passenger booking success!");
-                System.out.println("Passengers on flight to " + flight.getDestination() + " : " + flight.getPassengersOnFlight());
-                System.out.println("number of passengers: " + flight.getPassengersOnFlight().size());
 
-
-            }
-        }
 
     }
 
