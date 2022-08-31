@@ -60,7 +60,7 @@ public class CommandLine {
             }
         }
 
-        for (Flight flight: flightList){
+        for (Flight flight: flightList){ //Developments would include removing the option to add same person more than once
             if (flight.getFlightId()== bookedId){
                 if (flight.getPassengersOnFlight().contains(bookedPassenger)){
                     System.out.println("passenger already booked");
