@@ -47,7 +47,6 @@ public class CommandLine {
         System.out.println("Select flight ID to add passenger: ");
         Scanner idScanner = new Scanner(System.in);
         int bookedId = idScanner.nextInt();
-        System.out.println("\n");
         showPassengerList();
         System.out.println("Select passenger ID to add to flight: ");
         Scanner nameScanner = new Scanner(System.in);
@@ -63,6 +62,9 @@ public class CommandLine {
 
         for (Flight flight: flightList){
             if (flight.getFlightId()== bookedId){
+                if (flight.getPassengersOnFlight().contains(bookedPassenger)){
+                    System.out.println("passenger already booked");
+                } else
                 flight.addPassengerToFlight(bookedPassenger);
                 System.out.println("Passenger booking success!");
                 System.out.println("Passengers on flight to " + flight.getDestination() + " : " + flight.getPassengersOnFlight());
