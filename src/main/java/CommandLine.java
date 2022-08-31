@@ -38,7 +38,6 @@ public class CommandLine {
         Scanner numberScanner = new Scanner(System.in);
         String contactNumber = numberScanner.nextLine();
         Passenger newPassenger = new Passenger(name,contactNumber);
-        passengerList.add();
         addPassengerToList(newPassenger);
         System.out.println("Success! Confirmed list of passengers at current: " + passengerList);
     }
@@ -48,6 +47,8 @@ public class CommandLine {
         System.out.println("Select flight ID to add passenger: ");
         Scanner idScanner = new Scanner(System.in);
         int bookedId = idScanner.nextInt();
+        System.out.println("\n");
+        showPassengerList();
         System.out.println("Select passenger ID to add to flight: ");
         Scanner nameScanner = new Scanner(System.in);
         int passengerId = nameScanner.nextInt();
@@ -73,6 +74,17 @@ public class CommandLine {
 
     }
 
+    public void showMenu(){
+        System.out.println("***********Menu***********");
+        System.out.println("0. Display menu");
+        System.out.println("1. Add new flight");
+        System.out.println("2. Display all flights");
+        System.out.println("3. Add new passenger");
+        System.out.println("4. Book passenger onto flight");
+        System.out.println("5. Cancel a flight");
+        System.out.println("6. Quit");
+    }
+
 
 
     public void cancelFlight(){
@@ -90,6 +102,12 @@ public class CommandLine {
 
     public void addPassengerToList(Passenger passenger){
         passengerList.add(passenger);
+    }
+
+    public void showPassengerList(){
+        for (Passenger passenger: passengerList){
+            System.out.println(passenger);
+        }
     }
 
     public void addFlight(Flight flight){

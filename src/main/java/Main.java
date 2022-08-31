@@ -1,4 +1,5 @@
 import java.io.Console;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -8,31 +9,31 @@ public class Main {
 
 
      while(commandLine.isRunning()){
-         System.out.println("***********Menu***********");
-         System.out.println("1. Add new flight");
-         System.out.println("2. Display all flights");
-         System.out.println("3. Add new passenger");
-         System.out.println("4. Book passenger onto flight");
-         System.out.println("5. Cancel a flight");
-         System.out.println("6. Quit");
+         commandLine.showMenu();
          System.out.println("Enter your choice: ");
          Scanner console = new Scanner(System.in);
-         int menuChoice= console.nextInt();
-         if (menuChoice == 1){
-             commandLine.addFlight(); //user input, adds new flight to arraylist
-         } else if (menuChoice == 2){
-             commandLine.displayFlight(); //print out flight arraylist
-         } else if (menuChoice == 3){
-             commandLine.addPassenger(); //user input, adds new passenger to arraylist
-         } else if (menuChoice == 4){
-            commandLine.bookPassenger();//prints flight arraylist, asks for user selection. print passenger arraylist,asks for selection. adds passenger to passenger on flights arraylist.
-         } else if (menuChoice == 5){
-            commandLine.cancelFlight();//prints flight arraylist, asks for selection and removes from aarraylist
-         } else if (menuChoice == 6){
-            commandLine.setRunning(false);} else
-            System.out.println("Invalid choice!");
-
+         try {
+             int menuChoice= console.nextInt();
+             if (menuChoice == 0){
+                 commandLine.showMenu();
+             } else if (menuChoice == 1){
+                 commandLine.addFlight(); //user input, adds new flight to arraylist
+             } else if (menuChoice == 2){
+                 commandLine.displayFlight(); //print out flight arraylist
+             } else if (menuChoice == 3){
+                 commandLine.addPassenger(); //user input, adds new passenger to arraylist
+             } else if (menuChoice == 4){
+                 commandLine.bookPassenger();//prints flight arraylist, asks for user selection. print passenger arraylist,asks for selection. adds passenger to passenger on flights arraylist.
+             } else if (menuChoice == 5){
+                 commandLine.cancelFlight();//prints flight arraylist, asks for selection and removes from aarraylist
+             } else if (menuChoice == 6){
+                 System.out.println("Command Line shutdown.");
+                 break;} else
+                 System.out.println("Invalid choice!");
+         } catch (InputMismatchException exception){
+             System.out.println("please input a number");
          }
+        }
      }
     }
 
@@ -52,23 +53,7 @@ public class Main {
 // }
 
 
-//
-//    if(mChoice==1)
-//    {
-//    sw101.AddPassenger();
-//    }
-//    else if(mChoice==2)
-//    {
-//    sw101.RemovePassenger();
-//    }
-//    else if(mChoice==3)
-//    {
-//    //Quit
-//    break;
-//    }
-//    else
-//    {
-//    System.out.println("Invalid choice!");
+
 
 
 
