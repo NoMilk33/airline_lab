@@ -14,11 +14,20 @@ public class Passenger {
         Random rand = new Random();
         this.passengerID = rand.nextInt(10000);
     }
+
     @Override
     public String toString() {
-        return "Passenger{" +
-                "name='" + name + '\'' +
+        return "Passenger{ name=" + name + '\'' +
                 ", passengerID=" + passengerID +
                 '}';
+    }
 
+
+    public int getPassengerID() {
+        return passengerID;
+    }
+
+    public void setPassengerID(int passengerID) {
+        this.passengerID = passengerID;
+    }
 }
