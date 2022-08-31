@@ -64,8 +64,7 @@ public class CommandLine {
             if (flight.getFlightId()== bookedId){
                 if (flight.getPassengersOnFlight().contains(bookedPassenger)){
                     System.out.println("passenger already booked");
-                } else
-                flight.addPassengerToFlight(bookedPassenger);
+                } else flight.addPassengerToFlight(bookedPassenger);
                 System.out.println("Passenger booking success!");
                 System.out.println("Passengers on flight to " + flight.getDestination() + " : " + flight.getPassengersOnFlight());
                 System.out.println("number of passengers: " + flight.getPassengersOnFlight().size());
