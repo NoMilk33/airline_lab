@@ -70,8 +70,6 @@ public class CommandLine {
             }
         }
 
-
-        //sout passengersOnFlight flightID
     }
 
 
