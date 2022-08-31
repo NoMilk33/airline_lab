@@ -5,13 +5,13 @@ public class CommandLine {
 
     private ArrayList<Flight> flightList;
 
-    private ArrayList<Passenger> passengerList;
+    private ArrayList<Passenger> passengerDatabase;
 
     private boolean isRunning;
 
     public CommandLine() {
         this.flightList = new ArrayList<>();
-        this.passengerList = new ArrayList<>();
+        this.passengerDatabase = new ArrayList<>();
         this.isRunning = true;
     }
 
@@ -47,14 +47,14 @@ public class CommandLine {
         System.out.println("Select flight ID to add passenger: ");
         Scanner idScanner = new Scanner(System.in);
         int bookedId = idScanner.nextInt();
-        showPassengerList();
+        showPassengerDatabase();
         System.out.println("Select passenger ID to add to flight: ");
         Scanner nameScanner = new Scanner(System.in);
         int passengerId = nameScanner.nextInt();
 
 
 
-        for (Passenger passenger: passengerList){
+        for (Passenger passenger: passengerDatabase){
             if (passenger.getPassengerID() == passengerId){
 
                 for (Flight flight: flightList){
@@ -104,11 +104,11 @@ public class CommandLine {
     }
 
     public void addPassengerToList(Passenger passenger){
-        passengerList.add(passenger);
+        passengerDatabase.add(passenger);
     }
 
-    public void showPassengerList(){
-        for (Passenger passenger: passengerList){
+    public void showPassengerDatabase(){
+        for (Passenger passenger: passengerDatabase){
             System.out.println(passenger);
         }
     }
