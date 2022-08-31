@@ -16,12 +16,13 @@ public class Main {
          System.out.println("4. Book passenger onto flight");
          System.out.println("5. Cancel a flight");
          System.out.println("6. Quit");
-         Console console = System.console();
-         int menuChoice=Integer.parseInt(console.readLine("Enter your choice: "));
+         System.out.println("Enter your choice: ");
+         Scanner console = new Scanner(System.in);
+         int menuChoice= console.nextInt();
          if (menuChoice == 1){
              commandLine.addFlight(); //user input, adds new flight to arraylist
          } else if (menuChoice == 2){
-             commandLine.displayFlights(); //print out flight arraylist
+             commandLine.displayFlight(); //print out flight arraylist
          } else if (menuChoice == 3){
              commandLine.addPassenger(); //user input, adds new passenger to arraylist
          } else if (menuChoice == 4){
@@ -29,7 +30,7 @@ public class Main {
          } else if (menuChoice == 5){
             commandLine.cancelFlight();//prints flight arraylist, asks for selection and removes from aarraylist
          } else if (menuChoice == 6){
-            break;} else
+            commandLine.setRunning(false);} else
             System.out.println("Invalid choice!");
 
          }

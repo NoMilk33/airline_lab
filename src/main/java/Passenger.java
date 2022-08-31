@@ -23,4 +23,13 @@ public class Passenger {
                 ", passengerID=" + passengerID +
                 '}';
     }
+
+
+    public int getPassengerID() {
+        return passengerID;
+    }
+
+    public void setPassengerID(int passengerID) {
+        this.passengerID = passengerID;
+    }
 }
