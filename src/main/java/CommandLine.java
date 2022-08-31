@@ -21,7 +21,7 @@ public class CommandLine {
         String destination = inputScanner.nextLine();
         Flight newFlight = new Flight(destination);
         addFlight(newFlight);
-        System.out.println("Success! Confirmed list of flights at current: " + flightList);
+        System.out.println("Success! Press 2 to view flight list.");
     }
 
     public void displayFlight() {
@@ -39,7 +39,7 @@ public class CommandLine {
         String contactNumber = numberScanner.nextLine();
         Passenger newPassenger = new Passenger(name,contactNumber);
         addPassengerToList(newPassenger);
-        System.out.println("Success! Confirmed list of passengers at current: " + passengerList);
+        System.out.println("Success! Passenger added.");
     }
 
     public void bookPassenger(){

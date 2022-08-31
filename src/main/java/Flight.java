@@ -18,11 +18,6 @@ public class Flight {
         this.isCancelled = false;
     }
 
-    
-    
-
-
-    
     public void addPassengerToFlight(Passenger passenger){
         passengersOnFlight.add(passenger); // adds passenger to arraylist from passenger class
     }
@@ -53,11 +48,7 @@ public class Flight {
 
     @Override
     public String toString() {
-        return "Flight{" +
-                "destination='" + destination + '\'' +
-                ", flightId=" + flightId +
-                ", isCancelled=" + isCancelled +
-                '}';
+        return "Flight ID: " + flightId + "   " + "Destination: " + destination + "   " + "Cancelled: " + isCancelled;
     }
 
     public boolean isCancelled() {
