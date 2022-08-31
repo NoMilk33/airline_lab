@@ -22,6 +22,7 @@ public class CommandLine {
         Scanner numberScanner = new Scanner(System.in);
         String contactNumber = numberScanner.nextLine();
         Passenger newPassenger = new Passenger(name,contactNumber);
+        passengerList.add();
         addPassengerToList(newPassenger);
         System.out.println(passengerList); // maybe add overwrite toString method for passenger object?
 
