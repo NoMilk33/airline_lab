@@ -1,22 +1,28 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Flight {
 
     private String destination;
     private int flightId;
     private ArrayList<Passenger> passengersOnFlight;
-    private int capacity;
     private boolean isCancelled;
 
     public Flight (String destination){
         this.destination = destination;
-        this.flightId = flightId; //randomised?
+        Random rand = new Random();
+        this.flightId = rand.nextInt(10000);
         this.passengersOnFlight = new ArrayList<>();
-        this.capacity = 100;
         this.isCancelled = false;
-
     }
+
+    
+    
+
+
+    
     public void bookPassenger(Passenger passenger){
         passengersOnFlight.add(passenger); // adds passenger to arraylist from passenger class
     }
@@ -45,13 +51,7 @@ public class Flight {
         this.passengersOnFlight = passengersOnFlight;
     }
 
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
+   
 
     public boolean isCancelled() {
         return isCancelled;

@@ -6,13 +6,14 @@ public class CommandLine {
     private ArrayList<Flight> flightList;
 
     private ArrayList<Passenger> passengerList;
+    
+    private boolean isRunning;
 
     public CommandLine() {
         this.flightList = new ArrayList<>();
         this.passengerList = new ArrayList<>();
-    }
-
-
+        this.isRunning = true;   
+    }             
 
     public void addPassenger() {
         System.out.println("Passenger name:");
@@ -27,13 +28,41 @@ public class CommandLine {
 
     }
 
+    public void addFlight(){
+        System.out.println("Please enter the Destination:");
+        Scanner inputScanner = new Scanner(System.in);
+        String destination = inputScanner.nextLine();
+
+        Flight newFlight = new Flight(destination);
+        addFlight(newFlight);
+        System.out.println(flightList);
+    }
+    
+    
+    public void cancelFlight(){
+        return;
+    }
+    
+    public void bookPassenger(){
+        return;
+    }
     public void addPassengerToList(Passenger passenger){
         passengerList.add(passenger);
     }
 
-    public String showFlights(){
+    public void addFlight(Flight flight){
+        flightList.add(flight);
+    }
+
+    public String displayFlights(){
         return "empty";
     }
 
+    public boolean isRunning() {
+        return isRunning;
+    }
 
+    public void setRunning(boolean running) {
+        isRunning = running;
+    }
 }
